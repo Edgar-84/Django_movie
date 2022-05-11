@@ -1,4 +1,9 @@
 data_keys.py
+.flake8
+Makefile
+poetry.lock
+pyproject.toml
+
 .idea
 idea
 .DS_Store
