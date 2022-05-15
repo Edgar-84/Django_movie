@@ -16,6 +16,7 @@ dist
 db.sqlite3
 
 venv
+.env
 
 
 prod_settings.py
