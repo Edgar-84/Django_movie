@@ -39,7 +39,7 @@ media/*
 !*media
 
 log/debug.log
-
+static
 build
 doc
 home.rst
