@@ -2,8 +2,9 @@ from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView
 from django.views.generic.base import View
 
-from .models import Movie
 from .forms import ReviewForm
+from .models import Movie
+
 
 class MoviesView(ListView):
     """Список фильмов"""
