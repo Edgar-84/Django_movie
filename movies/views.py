@@ -13,7 +13,7 @@ class GenreYear:
         return Genre.objects.all()
 
     def get_years(self):
-        return Movie.objects.filter(draft=True)
+        return Movie.objects.filter(draft=False).values("year")
 
 
 class MoviesView(GenreYear, ListView):
