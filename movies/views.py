@@ -1,10 +1,10 @@
-from django.shortcuts import redirect, render
+from django.db.models import Q
+from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView
 from django.views.generic.base import View
 
 from .forms import ReviewForm
 from .models import Movie, Category, Actor, Genre
-from .models import Movie
 
 
 class GenreYear:
@@ -52,8 +52,14 @@ class ActorView(GenreYear, DetailView):
     slug_field = "name"
 
 
-
-
+class FilterMoviesView(GenreYear, ListView):
+    """Фильтр фильмов"""
+    def get_queryset(self):
+        queryset = Movie.objects.filter(
+            Q(year__in=self.request.GET.getlist("year")) |
+            Q(genres__in=self.request.GET.getlist("genre"))
+        )
+        return queryset
 
 
 
