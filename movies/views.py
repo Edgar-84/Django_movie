@@ -4,7 +4,7 @@ from django.views.generic.base import View
 
 from .forms import ReviewForm
 from .models import Movie, Category, Actor
-
+from .models import Movie
 
 class MoviesView(ListView):
     """Список фильмов"""
