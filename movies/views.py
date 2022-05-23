@@ -63,8 +63,7 @@ class FilterMoviesView(GenreYear, ListView):
     def get_queryset(self):
         queryset = Movie.objects.filter(
             Q(year__in=self.request.GET.getlist("year")) |
-            Q(genres__in=self.request.GET.getlist("genre")),
-            Q(draft=False)
+            Q(genres__in=self.request.GET.getlist("genre"))
         )
         return queryset
 
